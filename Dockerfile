@@ -1,4 +1,4 @@
-FROM ruby:2.7
+FROM ruby:2.7.1
 
 # configure the yarn repo (rails 6 depends on yarn)
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
