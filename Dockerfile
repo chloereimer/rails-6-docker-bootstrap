@@ -10,10 +10,8 @@ RUN apt-get update -qq && apt-get install -y yarn
 WORKDIR /usr/src/app
 
 COPY Gemfile Gemfile.lock ./
-RUN bundle install
+RUN bundle install --quiet
 
 COPY . .
 
-# -P /dev/null to resolve this issue: https://github.com/docker/compose/issues/1393
-# CMD ["rails", "server", "-b", "0.0.0.0", "-P", "/dev/null"]
 CMD ["rails", "server", "-b", "0.0.0.0"]
