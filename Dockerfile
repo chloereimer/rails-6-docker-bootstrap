@@ -7,9 +7,6 @@ RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources
 # again, yarn is a rails 6 dependency
 RUN apt-get update -qq && apt-get install -y yarn
 
-# throw errors if Gemfile has been modified since Gemfile.lock
-RUN bundle config --global frozen 1
-
 WORKDIR /usr/src/app
 
 COPY Gemfile Gemfile.lock ./
